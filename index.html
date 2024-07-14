@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iti store</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html"><img src="assets/logo.png" alt="logo" /></a>
+      <ul>
+        <li><a href="index.html">home</a></li>
+        <li><a href="products.html">shop</a></li>
+        <li><a href="#about">about</a></li>
+      </ul>
+      </div>
+      <div class="profile-shop">
+        <a href="profile.html" class="userName"></a>
+        <a href="profile.html" class="profile"
+          ><i class="bx bx-user-circle"></i
+        ></a>
+        <span></span>
+        <a href="cartpage.html" class="cart"
+          ><i class="bx bx-shopping-bag"></i> <span>0</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- end header -->
+    <!-- start main -->
+
+    <main>
+      <!-- ============= start hero ============= -->
+      <section class="hero" id="hero">
+        <h2 class="subtitle">women collection 2018</h2>
+        <h1 class="title">New Arrivals</h1>
+        <button class="shop-now"><a href="products.html">shop now</a></button>
+        <button class="arrow-right" onclick="showNextImage()"><i class="bx bx-right-arrow"></i></button>
+        <button class="arrow-left" onclick="showPrevImage()"><i class="bx bx-left-arrow"></i></button>
+      </section>
+      <!-- ============= end hero ============= -->
+      <!-- ============= start categories ============= -->
+       <section class="categories">
+        <div class="col">
+          <div class="top-categorie categorie">
+            <img src="assets/banner-02.jpg" alt="banner">
+            <button class="cat-btn" onclick="handleCat(this)" value="womens-dresses">
+              dresses
+            </button>
+          </div>
+          <div class="bottom-categorie categorie">
+            <img src="assets/banner-05.jpg" alt="banner">
+            <button class="cat-btn" onclick="handleCat(this)" value="sunglasses">
+              sunglasses
+            </button>
+          </div>
+        </div>
+        <div class="col col-revert">
+          <div class="top-categorie categorie">
+            <img src="assets/banner-03.jpg" alt="banner">
+            <button class="cat-btn" onclick="handleCat(this)" value="womens-watches">
+              watches
+            </button>
+          </div>
+          <div class="bottom-categorie categorie">
+            <img src="assets/banner-07.jpg" alt="banner">
+            <button class="cat-btn" onclick="handleCat(this)" value="womens-shoes">
+              footwear
+            </button>
+          </div>
+        </div>
+        <div class="col">
+          <div class="top-categorie categorie">
+            <img src="assets/banner-04.jpg" alt="banner">
+            <button class="cat-btn" onclick="handleCat(this)" value="womens-bags">
+              bags
+            </button>
+          </div>
+          <div class="bottom-categorie categorie discount-banner">
+            <img src="assets/bg-01.jpg" alt="banner">
+            <div class="banner-content">
+              <h1 class="title">sign up & get 20% off</h1>
+              <h2 class="subtitle">be the first to know about the latest fashion news and get exclusive offers</h2>
+              <button class="sign-up">
+                <a href="sign-up.html">sign up</a>
+              </button>
+            </div>
+          </div>
+        </div>
+       </section>
+       
+       
+      <!-- ============= end categories ============= -->
+      <!-- ============= start about us  ============= -->
+      <section class="about-us" id="about">
+        <div class="about-us-wrapper">
+          <div class="left-wrapper">
+            <img src="assets/banner-08.jpg" alt="" />
+            <div class="about-us-content">
+              <h2 class="subtitle">the beauty</h2>
+              <h1 class="title">look book</h1>
+            </div>
+          </div>
+          <div class="right-wrapper">
+            <p class="description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
+              veritatis dolor, ipsa aspernatur, maxime dolores perspiciatis nisi
+              nihil ad labore quod vitae totam beatae nesciunt quisquam
+              perferendis cumque fugiat natus rem accusamus rerum repellat!
+              Voluptatum id cumque temporibus debitis. Aut doloribus dolore
+              omnis non quaerat repellendus delectus vero ad? Error?
+            </p>
+            <button class="shop-now">
+              <a href="products.html">take a look</a>
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- ============= end about us ============= -->
+      <!-- ============= start benefits ============= -->
+      <section class="benefits-wrapper">
+        <h1 class="title">benefits</h1>
+        <article class="benefits">
+          <div class="benefit">
+            <i class="bx bx-phone-call"></i>
+            <div class="description">
+              <h2>Online support</h2>
+              <p>friendly & dedicated team</p>
+            </div>
+          </div>
+          <span class="breaker"></span>
+          <div class="benefit">
+            <i class="bx bxs-lock"></i>
+            <div class="description">
+              <h2>100% payment secure</h2>
+              <p>money back guarantee</p>
+            </div>
+          </div>
+          <span class="breaker"></span>
+          <div class="benefit">
+            <i class="bx bxs-truck"></i>
+            <div class="description">
+              <h2>shipping worldwide</h2>
+              <p>discount and offers available!</p>
+            </div>
+          </div>
+          <span class="breaker"></span>
+          <div class="benefit">
+            <i class="bx bxs-badge-check"></i>
+            <div class="description">
+              <h2>easy return policy</h2>
+              <p>fast and easy return</p>
+            </div>
+          </div>
+        </article>
+      </section>
+      <!-- ============= end benefits ============= -->
+    </main>
+
+    <!-- end main -->
+    <!-- start footer -->
+
+    <footer>
+      <section class="footer">
+        <div class="col">
+          <h3>Quick Link</h3>
+          <ul>
+            <li><a href="#about">about us</a></li>
+            <li><a href="#">terms & conditions</a></li>
+            <li><a href="#">privacy policy</a></li>
+            <li><a href="#">help</a></li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3>support</h3>
+          <ul>
+            <li><a href="#">our location</a></li>
+            <li><a href="#">the hosts</a></li>
+            <li><a href="about.html">about</a></li>
+            <li><a href="#">contact</a></li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3>Contact Info</h3>
+          <p>
+            <span class="d-block">Address:</span>
+            <span> 98 West 21th Street, Suite 721 New York NY 10016</span>
+          </p>
+          <p><span class="d-block">Phone:</span> <span> (+1) 435 3533</span></p>
+          <p>
+            <span class="d-block">Email:</span>
+            <span> info@yourdomain.com </span>
+          </p>
+        </div>
+        <div class="col">
+          <h3>Subscribe</h3>
+          <p>Sign up for our newsletter</p>
+          <form action="#" class="footer-newsletter">
+            <div class="form-group">
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Your email..."
+              />
+              <i class="bx bxl-telegram"></i>
+            </div>
+          </form>
+        </div>
+      </section>
+      <section class="copyright">
+        <p>
+          Copyright © 2024 All rights reserved | This template is made with
+          <i class="bx bxs-heart"></i>
+          by
+          <a href="#">our team</a>
+        </p>
+        <p class="col-md-12 social">
+          <a href="#"><i class="bx bxl-facebook"></i></a>
+          <a href="#"><i class="bx bxl-twitter"></i></a>
+          <a href="#"><i class="bx bxl-instagram"></i></a>
+          <a href="#"><i class="bx bxl-linkedin"></i></a>
+          <a href="#"><i class="bx bxl-youtube"></i></a>
+        </p>
+      </section>
+    </footer>
+    <i id="scrollToTopBtn" class="bx bx-up-arrow to-top" onclick="backToTop()"></i>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
