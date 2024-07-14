@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/cartpage.css" />
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>Shopping Cart</title>
+</head>
+
+<body>
+  <header>
+    <a href="index.html"><img src="assets/logo.png" alt="logo" /></a>
+    <ul>
+      <li><a href="index.html">home</a></li>
+      <li><a href="products.html">shop</a></li>
+    </ul>
+    </div>
+    <div class="profile-shop">
+      <a href="profile.html" class="userName"></a>
+      <a href="profile.html" class="profile"><i class="bx bx-user-circle"></i></a>
+      <span></span>
+      <a href="cartpage.html" class="cart"><i class="bx bx-shopping-bag"></i> <span>0</span>
+      </a>
+    </div>
+  </header>
+  <div class="car-header-parent">
+    <h1>CART</h1>
+  </div>
+  <div class="cart-page-wrapper">
+    <div class="left-cart-section">
+      <main>
+        <table class="cart-table">
+          <thead class="cart-header">
+            <tr>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody id="cart-items" class="cart-items">
+            <!-- Cart items will be will be handled by JavaScript -->
+            <button class="btn-clear">clear cart</button>
+          </tbody>
+        </table>
+      </main>
+    </div>
+    <div class="right-cart-section">
+      <div class="cart-totals-section">
+        <h2>CART TOTALS</h2>
+        <p>Subtotal: <span id="subtotal">$0.00</span></p>
+        <p>Total: <span id="total">$0.00</span></p>
+        <button id="proceed-checkout" onclick="proceedToCheckout()">
+          PROCEED TO CHECKOUT
+        </button>
+      </div>
+    </div>
+  </div>
+  <br />
+  <br />
+  <footer>
+    <section class="footer">
+      <div class="col">
+        <h3>Quick Link</h3>
+        <ul>
+          <li><a href="#about">about us</a></li>
+          <li><a href="#">terms & conditions</a></li>
+          <li><a href="#">privacy policy</a></li>
+          <li><a href="#">help</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3>support</h3>
+        <ul>
+          <li><a href="#">our location</a></li>
+          <li><a href="#">the hosts</a></li>
+          <li><a href="about.html">about</a></li>
+          <li><a href="#">contact</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3>Contact Info</h3>
+        <p>
+          <span class="d-block">Address:</span>
+          <span> 98 West 21th Street, Suite 721 New York NY 10016</span>
+        </p>
+        <p><span class="d-block">Phone:</span> <span> (+1) 435 3533</span></p>
+        <p>
+          <span class="d-block">Email:</span>
+          <span> info@yourdomain.com </span>
+        </p>
+      </div>
+      <div class="col">
+        <h3>Subscribe</h3>
+        <p>Sign up for our newsletter</p>
+        <form action="#" class="footer-newsletter">
+          <div class="form-group">
+            <input type="email" class="form-control" placeholder="Your email..." />
+            <i class="bx bxl-telegram"></i>
+          </div>
+        </form>
+      </div>
+    </section>
+    <section class="copyright">
+      <p>
+        Copyright © 2024 All rights reserved | This template is made with
+        <i class="bx bxs-heart"></i>
+        by
+        <a href="#">our team</a>
+      </p>
+      <p class="col-md-12 social">
+        <a href="#"><i class="bx bxl-facebook"></i></a>
+        <a href="#"><i class="bx bxl-twitter"></i></a>
+        <a href="#"><i class="bx bxl-instagram"></i></a>
+        <a href="#"><i class="bx bxl-linkedin"></i></a>
+        <a href="#"><i class="bx bxl-youtube"></i></a>
+      </p>
+    </section>
+  </footer>
+
+  <script type="module" src="js/cartpage.js"></script>
+  <script type="module" src="js/main-cart-page.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
