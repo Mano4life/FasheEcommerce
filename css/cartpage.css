@@ -1,0 +1,164 @@
+/* Reset some basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.car-header-parent{
+text-align: center;
+margin-top:  4rem; 
+font-size: 40px ;
+font-weight: 500;
+text-transform: uppercase;
+}
+
+
+.cart-page-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  min-height: 50vh;
+  padding-inline: 2rem;
+}
+
+.left-cart-section {
+  width: 70%;
+  height: 100%;
+}
+
+.right-cart-section {
+  width: 30%;
+  height: 100%;
+}
+
+
+
+
+/* Main section styles */
+main {
+  padding: 2rem;
+}
+
+main table {
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  background-color: #eee;
+
+}
+
+main table thead th {
+  background-color: #d6d2d2;
+  padding: 1rem;
+  text-align: left;
+}
+
+main table tbody tr td {
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+main table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+main table tbody tr td button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  transition: .3s ease all;
+}
+
+main table tbody tr td button:hover {
+  background-color: orangered;
+}
+
+.btn-clear {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: orangered;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  margin: 1rem 0;
+  float: right;
+  text-transform: uppercase;
+  transition: .3s ease all;
+}
+
+.btn-clear:hover {
+  background-color: #333;
+}
+
+.cart-items td:nth-child(1) {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cart-items td {
+  font-weight: 500;
+}
+
+.cart-items input[type="text"] {
+  width: 50px;
+  padding: 0.5rem;
+  border: 1px solid #333;
+  border-radius: 5px;
+  text-align: center;
+}
+/* Cart totals section styles */
+.cart-totals-section {
+  text-align: center;
+  padding: 2rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  max-width: 600px;
+}
+
+.cart-totals-section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.cart-totals-section p {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.cart-totals-section button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #27ae60;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.cart-totals-section button:hover {
+  background-color: #219150;
+}
