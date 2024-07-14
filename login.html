@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sign up or login into our E-commerce Website">
+    <title>Sign Up!</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.png">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/c1af77ae4d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/login-style.css">
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<header>
+    <a href="index.html"><img src="assets/logo.png" alt="logo" /></a>
+    <ul>
+        <li><a href="index.html">home</a></li>
+        <li><a href="products.html">shop</a></li>
+        <li><a href="#about">about</a></li>
+    </ul>
+    </div>
+    <div class="profile-shop">
+        <a href="profile.html" class="userName"></a>
+        <a href="profile.html" class="profile"><i class="bx bx-user-circle"></i></a>
+        <span></span>
+        <a href="cartpage.html" class="cart"><i class="bx bx-shopping-bag"></i> <span>0</span>
+        </a>
+    </div>
+</header>
+
+<!-- end header -->
+
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h1 id="title">Sign Up</h1>
+            <form id="authForm">
+                <div class="input-group">
+                    <div class="input-field" id="nameField">
+                        <i class="fa-solid fa-signature"></i>
+                        <input type="text" placeholder="Name" id="nameInput">
+                    </div>
+
+                    <div class="input-field" id="age">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <input type="number" placeholder="Your Age" id="ageInput">
+                    </div>
+
+                    <div class="input-field">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" placeholder="Username" id="usernameInput">
+                    </div>
+
+                    <div class="input-field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" placeholder="Password" id="passwordInput">
+                    </div>
+                    <p>Lost Password? <a href="mailto:polaadelovic@gmail.com">Contact Support!</a></p>
+                </div>
+                <div class="btn-field">
+                    <button type="button" id="signupBtn">Sign Up</button>
+                    <button type="button" id="signinBtn" class="disable">Sign In</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- start footer -->
+
+    <footer>
+        <section class="footer">
+            <div class="col">
+                <h3>Quick Link</h3>
+                <ul>
+                    <li><a href="about.html">about us</a></li>
+                    <li><a href="#">terms & conditions</a></li>
+                    <li><a href="#">privacy policy</a></li>
+                    <li><a href="#">help</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h3>support</h3>
+                <ul>
+                    <li><a href="#">our location</a></li>
+                    <li><a href="#">the hosts</a></li>
+                    <li><a href="about.html">about</a></li>
+                    <li><a href="#">contact</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h3>Contact Info</h3>
+                <p>
+                    <span class="d-block">Address:</span>
+                    <span> 98 West 21th Street, Suite 721 New York NY 10016</span>
+                </p>
+                <p><span class="d-block">Phone:</span> <span> (+1) 435 3533</span></p>
+                <p>
+                    <span class="d-block">Email:</span>
+                    <span> info@yourdomain.com </span>
+                </p>
+            </div>
+            <div class="col">
+                <h3>Subscribe</h3>
+                <p>Sign up for our newsletter</p>
+                <form action="#" class="footer-newsletter">
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Your email..." />
+                        <i class="bx bxl-telegram"></i>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section class="copyright">
+            <p>
+                Copyright © 2024 All rights reserved | This template is made with
+                <i class="bx bxs-heart"></i>
+                by
+                <a href="#">our team</a>
+            </p>
+            <p class="col-md-12 social">
+                <a href="#"><i class="bx bxl-facebook"></i></a>
+                <a href="#"><i class="bx bxl-twitter"></i></a>
+                <a href="#"><i class="bx bxl-instagram"></i></a>
+                <a href="#"><i class="bx bxl-linkedin"></i></a>
+                <a href="#"><i class="bx bxl-youtube"></i></a>
+            </p>
+        </section>
+    </footer>
+    <i id="scrollToTopBtn" class="bx bx-up-arrow to-top"></i>
+    <script>
+        let signupBtn = document.getElementById("signupBtn");
+        let signinBtn = document.getElementById("signinBtn");
+        let nameField = document.getElementById("nameField");
+        let title = document.getElementById("title");
+        let ageField = document.getElementById("age");
+
+        signinBtn.onclick = function () {
+            nameField.style.maxHeight = "0";
+            ageField.style.maxHeight = "0";
+            title.innerHTML = "Sign In";
+            signupBtn.classList.add("disable");
+            signinBtn.classList.remove("disable");
+
+            let loginUsername = document.getElementById("usernameInput").value;
+            let loginPassword = document.getElementById("passwordInput").value;
+
+            if (loginUsername != "" && loginPassword != "") {
+                // Local Storage Authentication
+                let user = JSON.parse(localStorage.getItem(loginUsername));
+                if (user && user.password === loginPassword) {
+                    localStorage.setItem('currentUser', loginUsername);
+                    window.location.href = '/profile.html';
+                } else {
+                    // API Authentication
+                    fetch('https://dummyjson.com/auth/login', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            username: loginUsername,
+                            password: loginPassword,
+                            expiresInMins: 30, // optional, defaults to 60
+                        })
+                    })
+                        .then(res => res.json())
+                        .then((data) => {
+                            if (data.message) {
+                                alert(data.message);
+                            } else if (data.token) {
+                                localStorage.setItem('loginToken', data.token);
+                                localStorage.setItem('currentUser', loginUsername);
+                                window.location.href = '/profile.html';
+                            } else {
+                                alert("Invalid username or password");
+                            }
+                        });
+                }
+            }
+        };
+
+        signupBtn.onclick = function () {
+            nameField.style.maxHeight = "60px";
+            ageField.style.maxHeight = "60px";
+            title.innerHTML = "Sign Up";
+            signupBtn.classList.remove("disable");
+            signinBtn.classList.add("disable");
+
+            let name = document.getElementById("nameInput").value;
+            let age = document.getElementById("ageInput").value;
+            let username = document.getElementById("usernameInput").value;
+            let password = document.getElementById("passwordInput").value;
+
+            console.log("Signup clicked");
+            console.log("Name:", name);
+            console.log("Age:", age);
+            console.log("Username:", username);
+            console.log("Password:", password);
+
+            if (username && password) {
+                let user = {
+                    name: name,
+                    age: age,
+                    username: username,
+                    password: password
+                };
+                console.log("User object:", user);
+                localStorage.setItem(username, JSON.stringify(user));
+                alert("Signup successful! You can now sign in.");
+            } else {
+                alert("Please fill in all fields.");
+            }
+        };
+    </script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

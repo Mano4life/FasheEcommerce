@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Profile</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.png">
+    <link rel="stylesheet" href="css/profile-style.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/c1af77ae4d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <!-- start header -->
+
+    <header>
+        <a href="index.html"><img src="assets/logo.png" alt="logo" /></a>
+        <ul>
+            <li><a href="index.html">home</a></li>
+            <li><a href="products.html">shop</a></li>
+            <li><a href="#about">about</a></li>
+        </ul>
+        </div>
+        <div class="profile-shop">
+        <a href="profile.html" class="userName"></a>
+            <a href="profile.html" class="profile"><i class="bx bx-user-circle"></i></a>
+            <span></span>
+            <a href="cartpage.html" class="cart"><i class="bx bx-shopping-bag"></i> <span>0</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- end header -->
+    <div class="container profile-container"> 
+        <div class="leftbox">
+            <nav>
+                <a onclick="tabs(0)" class="tab active">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+                <a onclick="tabs(1)" class="tab">
+                    <i class="fa-solid fa-location-dot"></i>
+                </a>
+            </nav>
+        </div>
+        <div class="rightbox">
+            <div class="profile tabShow">
+                <h1>Profile Info</h1>
+                <h2>Full Name</h2>
+                <input type="text" class="profileInput" id="fullName" readonly>
+                <h2>Birthday</h2>
+                <input type="text" class="profileInput" id="birthDate" readonly>
+                <h2>Gender</h2>
+                <input type="text" class="profileInput" id="gender" readonly>
+                <h2>Email</h2>
+                <input type="text" class="profileInput" id="email" readonly>
+                <button class="btn" onclick="logOut();">Logout</button>
+            </div>
+            <div class="Addresse tabShow">
+                <h1>Addresse Info</h1>
+                <h2>Addresse Deatils</h2>
+                <input type="text" class="profileInput" id="address" readonly>
+                <h2>city</h2>
+                <input type="text" class="profileInput" id="city" readonly>
+                <h2>state</h2>
+                <input type="text" class="profileInput" id="state" readonly>
+                <h2>Postal Code</h2>
+                <input type="text" class="profileInput" id="postalCode" readonly>
+                <button class="btn" onclick="logOut();">Logout</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- start footer -->
+
+    <footer>
+        <section class="footer">
+            <div class="col">
+                <h3>Quick Link</h3>
+                <ul>
+                    <li><a href="about.html">about us</a></li>
+                    <li><a href="#">terms & conditions</a></li>
+                    <li><a href="#">privacy policy</a></li>
+                    <li><a href="#">help</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h3>support</h3>
+                <ul>
+                    <li><a href="#">our location</a></li>
+                    <li><a href="#">the hosts</a></li>
+                    <li><a href="about.html">about</a></li>
+                    <li><a href="#">contact</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h3>Contact Info</h3>
+                <p>
+                    <span class="d-block">Address:</span>
+                    <span> 98 West 21th Street, Suite 721 New York NY 10016</span>
+                </p>
+                <p><span class="d-block">Phone:</span> <span> (+1) 435 3533</span></p>
+                <p>
+                    <span class="d-block">Email:</span>
+                    <span> info@yourdomain.com </span>
+                </p>
+            </div>
+            <div class="col">
+                <h3>Subscribe</h3>
+                <p>Sign up for our newsletter</p>
+                <form action="#" class="footer-newsletter">
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Your email..." />
+                        <i class="bx bxl-telegram"></i>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section class="copyright">
+            <p>
+                Copyright © 2024 All rights reserved | This template is made with
+                <i class="bx bxs-heart"></i>
+                by
+                <a href="#">our team</a>
+            </p>
+            <p class="col-md-12 social">
+                <a href="#"><i class="bx bxl-facebook"></i></a>
+                <a href="#"><i class="bx bxl-twitter"></i></a>
+                <a href="#"><i class="bx bxl-instagram"></i></a>
+                <a href="#"><i class="bx bxl-linkedin"></i></a>
+                <a href="#"><i class="bx bxl-youtube"></i></a>
+            </p>
+        </section>
+    </footer>
+    <i id="scrollToTopBtn" class="bx bx-up-arrow to-top"></i>
+
+    <script>
+        const tabBtn = document.querySelectorAll(".tab")
+        const tab = document.querySelectorAll(".tabShow")
+        function tabs(panelIndex) {
+            tab.forEach(function (node) {
+                node.style.display = "none";
+            })
+            tab[panelIndex].style.display = "block";
+        }
+        tabs(0)
+        document.querySelectorAll(".tab").forEach(function (tab) {
+            tab.addEventListener("click", function () {
+                // Remove 'active' class from all siblings
+                var siblings = this.parentNode.children;
+                for (var i = 0; i < siblings.length; i++) {
+                    siblings[i].classList.remove("active");
+                }
+                // Add 'active' class to the clicked tab
+                this.classList.add("active");
+            });
+        });
+
+        window.onload = function () {
+            //Check for correct token 
+            var loginToken = localStorage.getItem('loginToken');
+            var currentUser = localStorage.getItem('currentUser');
+            if (loginToken && currentUser) {
+                /* providing token in bearer */
+                fetch('https://dummyjson.com/auth/me', {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': 'Bearer ' + loginToken,
+                    },
+                })
+                    .then(res => res.json())
+                    .then((data) => {
+                        if (data.message) {
+                            alert('Re-Sign in Please');
+                            window.location.href = "/login.html";
+                        } else {
+                            // let user = JSON.parse(localStorage.getItem(currentUser));
+                            // if (user) {
+                            document.getElementById("fullName").value = data.firstName || "";
+                            document.getElementById("birthDate").value = data.birthDate || "";
+
+                            document.getElementById("gender").value = data.gender || "";
+                            document.getElementById("email").value = data.email || "";
+                            if (data.address) {
+                                document.getElementById("address").value = data.address.address || "";
+                                document.getElementById("city").value = data.address.city || "";
+                                document.getElementById("state").value = data.address.state || "";
+                                document.getElementById("postalCode").value = data.address.postalCode || "";
+                            }
+                        }
+                    });
+            } else if (currentUser) {
+                let user = JSON.parse(localStorage.getItem(currentUser));
+                if (user) {
+                    document.getElementById("fullName").value = user.name || "";
+                    document.getElementById("birthDate").value = user.age || "Not provided";
+                    document.getElementById("gender").value = "Not provided";
+                    document.getElementById("email").value = "Not provided";
+                    document.getElementById("address").value = "Not provided";
+                    document.getElementById("city").value = "Not provided";
+                    document.getElementById("state").value = "Not provided";
+                    document.getElementById("postalCode").value = "Not provided";
+                }
+            } else {
+                window.location.href = "/login.html";
+            }
+        };
+
+        function logOut() {
+            localStorage.removeItem("loginToken");
+            localStorage.removeItem("currentUser");
+            window.location.href = "/login.html";
+        }
+    </script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
