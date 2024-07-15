@@ -22,8 +22,8 @@
     </ul>
     </div>
     <div class="profile-shop">
-        <a href="profile.html" class="userName"></a>
-        <a href="profile.html" class="profile"><i class="bx bx-user-circle"></i></a>
+        <a href="/FasheEcommerce/profile.html" class="userName"></a>
+        <a href="/FasheEcommerce/profile.html" class="profile"><i class="bx bx-user-circle"></i></a>
         <span></span>
         <a href="cartpage.html" class="cart"><i class="bx bx-shopping-bag"></i> <span>0</span>
         </a>
@@ -150,7 +150,7 @@
                 let user = JSON.parse(localStorage.getItem(loginUsername));
                 if (user && user.password === loginPassword) {
                     localStorage.setItem('currentUser', loginUsername);
-                    window.location.href = '/profile.html';
+                    window.location.href = '/FasheEcommerce/profile.html';
                 } else {
                     // API Authentication
                     fetch('https://dummyjson.com/auth/login', {
@@ -169,7 +169,7 @@
                             } else if (data.token) {
                                 localStorage.setItem('loginToken', data.token);
                                 localStorage.setItem('currentUser', loginUsername);
-                                window.location.href = '/profile.html';
+                                window.location.href = '/FasheEcommerce/profile.html';
                             } else {
                                 alert("Invalid username or password");
                             }
