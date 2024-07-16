@@ -15,6 +15,9 @@
 
 body{
     font-family: Montserrat;
+    p{
+      color: #333 !important;
+    }
 }
 
 /* Main Section Styles */
@@ -42,7 +45,7 @@ body{
   margin-top: 60px;
     button{
       padding: 20px 80px;
-      background-color: #39bf;
+      background-color: #333;
       color: white;
       border: none;
       border-radius: 10px;
@@ -52,7 +55,7 @@ body{
       transition: .2s;
     }
     button:hover{
-      background-color: rgb(33, 124, 155);
+      background-color: orangered;
     }
 } 
 
@@ -150,19 +153,19 @@ body{
 }
 
 .price .discount {
-  color: #c0392b;
+  color: orangered;
   font-size: 16px;
   
 }
 
 .rating {
   font-size: 20px;
-  color: #27ae60;
+  color: #27ae60 !important;
   font-weight: 600;
 }
 
 .low-stock {
-  color: #c0392b;
+  color: orangered;
   font-weight: bold;
 }
 
@@ -202,7 +205,7 @@ body{
   margin-bottom: 0;
 }
 .review span{
-  color: rgb(240, 140, 140);
+  color: orangered;
   font-size: 16px;
 }
 
